@@ -19,6 +19,9 @@
     "@angular/platform-browser": "~11.2.6",
     "@angular/platform-browser-dynamic": "~11.2.6",
     "@angular/router": "~11.2.6",
+    "@syncfusion/ej2-angular-grids": "^18.4.48",
+    "@syncfusion/ej2-angular-inputs": "^18.4.47",
+    "node-sass": "^5.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"

@@ -1,0 +1,74 @@
+@import "./../../assets/mixins/common";
+
+.menu-main-cotainer {
+  .urlNav {
+    @include urlNav;
+  }
+  .title {
+    @include pageTitle;
+  }
+  .menu-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .item-wrap {
+      width: 320px;
+      height: 460px;
+      border-radius: 5px;
+      box-shadow: lightgrey 3px 3px 10px;
+      margin: 20px;
+
+      &:hover {
+        transform: scale(1.05);
+        transition: 0.5s;
+        cursor: pointer;
+      }
+      .item {
+        .food {
+          img {
+            width: 100%;
+            height: 250px;
+          }
+        }
+        .detail-container {
+          text-align: justify;
+          padding: 10px;
+
+          .detail,
+          .quantity-container {
+            display: flex;
+            justify-content: space-between;
+            align-content: space-between;
+            padding: 5px 0px;
+          }
+        }
+      }
+    }
+  }
+  .cart-button-container {
+    display: flex;
+    flex-direction: row-reverse;
+    div {
+      @include button;
+      font-weight: bold;
+      font-size: 1.3rem;
+      margin: 20px;
+    }
+    div:hover {
+      transform: scale(1.05);
+      transition: 1.5s;
+    }
+  }
+}
+
+/* csslint ignore:start */
+.e-numeric .e-input-group-icon.e-spin-up:before {
+  content: "\e823";
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.e-numeric .e-input-group-icon.e-spin-down:before {
+  content: "\e934";
+  color: rgba(0, 0, 0, 0.54);
+}
+/* csslint ignore:end */

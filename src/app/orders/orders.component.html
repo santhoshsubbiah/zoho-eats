@@ -1,0 +1,47 @@
+<div class="orders-main-container">
+  <nav class="urlNav">
+    <a routerLink="/menu">Menu</a> > <a routerLink="/orders">Orders</a>
+  </nav>
+
+  <div class="title">{{ title }}</div>
+
+  <div class="order-container">
+    <ejs-grid
+      [dataSource]="orderDatasource"
+      [sortSettings]="initialSort"
+      [toolbar]="toolbarOptions"
+      [allowPaging]="true"
+      [allowSorting]="true"
+      [pageSettings]="pageSettings"
+    >
+      <e-columns>
+        <e-column
+          field="name"
+          headerText="Name"
+          textAlign="Center"
+          width="100"
+        ></e-column>
+        <e-column
+          field="price"
+          headerText="Price"
+          textAlign="Center"
+          width="100"
+        ></e-column>
+        <e-column
+          field="quantity"
+          headerText="Quantity"
+          textAlign="Center"
+          width="100"
+        ></e-column>
+        <e-column
+          field="date"
+          headerText="Order Date"
+          [format]="formatOptions"
+          textAlign="Center"
+          format="d/M/y"
+          width="100"
+        ></e-column>
+      </e-columns>
+    </ejs-grid>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+.header {
+  height: 120px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-image: linear-gradient(to right, orangered, yellow);
+  font-size: 1.5rem;
+  text-align: center;
+  z-index: 2;
+
+  .sub-tit {
+    font-size: 0.6em;
+    color: white;
+  }
+
+  h1::first-letter {
+    font-size: 1.7em;
+    color: orangered;
+  }
+}
+.main {
+  position: relative;
+  top: 120px;
+  height: 100%;
+}
+.footer {
+  width: 100%;
+  position: relative;
+  top: 120px;
+  bottom: 0px;
+  background-color: lightskyblue;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 30px;
+}
