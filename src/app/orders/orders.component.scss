@@ -1,0 +1,14 @@
+@import "./../../assets/mixins/common";
+
+.orders-main-container {
+  .urlNav {
+    @include urlNav;
+  }
+  .title {
+    @include pageTitle;
+  }
+}
+
+.e-grid {
+  background: gray;
+}

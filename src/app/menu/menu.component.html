@@ -1,0 +1,57 @@
+<div class="menu-main-cotainer">
+  <div class="urlNav">
+  </div>
+  <div class="title">{{ title }}</div>
+  <div class="menu-container">
+    <div class="item-wrap" *ngFor="let food of foods; index as i">
+      <div class="item">
+        <div class="food">
+          <img [src]="food.img" />
+        </div>
+
+        <div class="detail-container">
+          <div class="detail">
+            <div>Name</div>
+            <div>{{ food.name }}</div>
+          </div>
+          <div class="detail">
+            <div>Price</div>
+            <div style="font-weight: bold; font-size: 20px">
+              ₹ {{ food.price }}
+            </div>
+          </div>
+          <div class="detail">
+            <div>Type</div>
+            <div [style.color]="food.type === 'Veg' ? 'green' : 'red'">
+              {{ food.type | uppercase }}
+            </div>
+          </div>
+          <div class="detail">
+            <div>Cuisine Type</div>
+            <div>{{ food.cuisine }}</div>
+          </div>
+          <div class="detail">
+            <div>Availability</div>
+            <div>[{{ food.availability }}]</div>
+          </div>
+          <div class="quantity-container">
+            <div>Quantity</div>
+            <div>
+              <ejs-numerictextbox
+                (change)="handleInputChange(i, $event)"
+                [value]="food.quantity"
+                min="0"
+                format="#"
+                width="120px"
+                height="100px"
+              ></ejs-numerictextbox>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cart-button-container">
+    <div routerLink="/cart">Go to Cart →</div>
+  </div>
+</div>

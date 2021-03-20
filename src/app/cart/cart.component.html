@@ -1,0 +1,56 @@
+<div class="cart-main-container">
+  <div class="urlNav">
+    <a routerLink="/menu">Menu</a> > <a routerLink="/cart">Cart</a>
+  </div>
+  <div class="title">{{ title }}</div>
+  <div class="cart-container">
+    <div *ngIf="totalAmount" class="total-amount">
+      Total Amount ₹ {{ totalAmount }}
+    </div>
+    <div class="cart-item" *ngFor="let food of selectedFoodData; index as i">
+      <div class="img-container">
+        <img [src]="food.img" />
+      </div>
+      <div class="detail-container">
+        <div class="detail">
+          <div>Name</div>
+          <div>{{ food.name }}</div>
+        </div>
+        <div class="detail">
+          <div>Price</div>
+          <div>₹ {{ food.price }}</div>
+        </div>
+        <div class="quantity-container">
+          <div>Quantity</div>
+          <div>
+            <ejs-numerictextbox
+              (change)="handleInputChange(food.name, food.price, $event)"
+              [value]="food.quantity"
+              min="1"
+              format="#"
+              width="120px"
+              height="100px"
+            ></ejs-numerictextbox>
+          </div>
+        </div>
+        <div class="detail">
+          <button (click)="removeFromCart(i, food.name)">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="empty-content" *ngIf="selectedFoodData.length === 0">
+    <p>Your cart is empty</p>
+  </div>
+  <div class="nav">
+    <div *ngIf="totalAmount" class="btn" routerLink="/menu">Go To Menu</div>
+    <div
+      *ngIf="totalAmount"
+      class="btn"
+      routerLink="/orders"
+      (click)="orderButtonClick()"
+    >
+      Place Order
+    </div>
+  </div>
+</div>
