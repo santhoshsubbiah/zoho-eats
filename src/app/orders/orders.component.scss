@@ -8,7 +8,10 @@
     @include pageTitle;
   }
 }
-
+.btn {
+  @include button;
+  margin: 20px 10px 0;
+}
 .e-grid {
   background: gray;
 }

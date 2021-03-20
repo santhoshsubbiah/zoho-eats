@@ -32,5 +32,8 @@ export class OrdersComponent implements OnInit {
   ngOnInit(): void {
 
   }
+  reset(): void {
+    initialFoodData.map(item => item.quantity = 0);
+  }
 
 }

@@ -1,6 +1,6 @@
 <div class="orders-main-container">
   <nav class="urlNav">
-    <a routerLink="/menu">Menu</a> > <a routerLink="/orders">Orders</a>
+    <a routerLink="/menu" (click)="reset()">Menu</a> > <a routerLink="/orders">Orders</a>
   </nav>
 
   <div class="title">{{ title }}</div>
@@ -44,4 +44,5 @@
       </e-columns>
     </ejs-grid>
   </div>
+  <div class="btn" routerLink="/menu">Main Menu</div>
 </div>

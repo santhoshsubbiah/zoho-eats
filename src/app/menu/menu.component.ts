@@ -12,8 +12,8 @@ export class MenuComponent implements OnInit {
   public title: string = "Menu";
 
   public foods: IFood[] = [];
-
-  pu
+ 
+  public count: number = 0;
   constructor() {
     this.foods = initialFoodData;
   }
