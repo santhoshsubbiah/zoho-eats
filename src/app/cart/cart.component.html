@@ -2,10 +2,10 @@
   <div class="urlNav">
     <a routerLink="/menu">Menu</a> > <a routerLink="/cart">Cart</a>
   </div>
-  <div class="title">{{ title }}</div>
   <div class="cart-container">
     <div *ngIf="totalAmount" class="total-amount">
-      Total Amount ₹ {{ totalAmount }}
+      <div class="tot">Total</div>
+      <div class="amt">₹ {{ totalAmount }}</div>
     </div>
     <div class="cart-item" *ngFor="let food of selectedFoodData; index as i">
       <div class="img-container">
@@ -22,25 +22,26 @@
         </div>
         <div class="quantity-container">
           <div>Quantity</div>
-          <div>
+          <div class="num-input">
             <ejs-numerictextbox
               (change)="handleInputChange(food.name, food.price, $event)"
               [value]="food.quantity"
               min="1"
               format="#"
-              width="120px"
-              height="100px"
+              style="font-size: large;font-weight: bold;"
             ></ejs-numerictextbox>
           </div>
         </div>
         <div class="detail">
-          <button (click)="removeFromCart(i, food.name)">Remove</button>
+          <div class="rmv-btn" (click)="removeFromCart(i, food.name)">
+            Remove
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div class="empty-content" *ngIf="selectedFoodData.length === 0">
-    <img src="./assets/images/empty-cart.png">
+    <img src="./assets/images/empty-cart.png" />
   </div>
   <div class="nav">
     <div *ngIf="totalAmount" class="btn" routerLink="/menu">Go To Menu</div>

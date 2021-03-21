@@ -15,5 +15,4 @@ for (let i: number = 1000; i >= 1; i--) {
         date: new Date(today.setDate(today.getDate() - 1))
     }
     dummyDataSource.push(food);
-    console.log(dummyDataSource);
 }
