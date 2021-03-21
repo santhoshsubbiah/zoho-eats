@@ -1,11 +1,20 @@
 @import "./../../assets/mixins/common";
 
 .menu-main-cotainer {
+  padding: 10px;
   .urlNav {
     @include urlNav;
+    @include w425 {
+      margin: 10px;
+      font-size: 0.8em;
+    }
   }
   .title {
     @include pageTitle;
+    @include w425 {
+      margin: 10px;
+      font-size: 1.2em;
+    }
   }
   .menu-container {
     display: flex;
@@ -14,22 +23,31 @@
     .item-wrap {
       width: 320px;
       height: 460px;
-      border-radius: 5px;
+      border-top-right-radius: 50px;
       box-shadow: lightgrey 3px 3px 10px;
       margin: 20px;
 
+      @include w425 {
+        height: 350px;
+      }
+
       &:hover {
         transform: scale(1.05);
-        transition: 0.5s;
+        transition: 0.2s;
         cursor: pointer;
       }
       .item {
         .food {
           img {
+            border-top-right-radius: 50px;
             width: 100%;
             height: 250px;
+            @include w425 {
+              height: 150px;
+            }
           }
         }
+
         .detail-container {
           text-align: justify;
           padding: 10px;
@@ -40,11 +58,16 @@
             justify-content: space-between;
             align-content: space-between;
             padding: 5px 0px;
+
+            @include w425 {
+              font-size: 0.8rem;
+            }
           }
         }
       }
     }
   }
+
   .cart-button-container {
     display: flex;
     flex-direction: row-reverse;
@@ -52,7 +75,13 @@
       @include button;
       font-weight: bold;
       font-size: 1.3rem;
-      margin: 20px;
+      margin: 10px;
+      margin-right: 50px;
+
+      @include w425 {
+        border-radius: 50px;
+        font-size: 0.9rem;
+      }
     }
     div:hover {
       transform: scale(1.05);

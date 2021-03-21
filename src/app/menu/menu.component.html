@@ -1,6 +1,4 @@
 <div class="menu-main-cotainer">
-  <div class="urlNav">
-  </div>
   <div class="title">{{ title }}</div>
   <div class="menu-container">
     <div class="item-wrap" *ngFor="let food of foods; index as i">
@@ -22,7 +20,10 @@
           </div>
           <div class="detail">
             <div>Type</div>
-            <div [style.color]="food.type === 'Veg' ? 'green' : 'red'">
+            <div
+              [style.color]="food.type === 'Veg' ? 'green' : 'red'"
+              style="font-weight: bold"
+            >
               {{ food.type | uppercase }}
             </div>
           </div>
@@ -42,8 +43,9 @@
                 [value]="food.quantity"
                 min="0"
                 format="#"
-                width="120px"
+                width="90px"
                 height="100px"
+                style="font-size: medium; font-weight: bold"
               ></ejs-numerictextbox>
             </div>
           </div>

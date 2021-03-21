@@ -25,18 +25,25 @@
 }
 
 @mixin button {
-  background-image: linear-gradient(to right, orangered, yellow);
+  width: 200px;
+  background-color: #009ffd;
+  border-radius: 5px;
   font-size: 1.2rem;
   font-weight: bold;
   border: none;
-  color: black;
+  color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  margin: 4px 2px;
   cursor: pointer;
   outline: none;
+
+  &:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+    transition: 0.2s;
+    cursor: pointer;
+  }
 }
 
 @mixin pageTitle {
@@ -49,56 +56,16 @@
 
 @mixin urlNav {
   color: red;
+  margin: 20px;
+  font-size: 1.2rem;
   a {
     text-decoration: none;
   }
   a:hover {
     color: gray;
   }
-}
-
-@mixin linkBtn {
-  color: var(--teal);
-  font-weight: 500;
-  cursor: pointer;
-  display: inline-block;
-
-  &:hover {
-    text-decoration: underline;
+  @include w425 {
+    margin: 10px;
+    font-size: 0.8em;
   }
-}
-
-@mixin rotate180 {
-  transition: 0.5s;
-  transform: rotate(180deg);
-}
-
-@mixin textOverflow {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-@mixin listCard {
-  border-radius: 0;
-  border: 1px solid #f0f0f0;
-  cursor: pointer;
-
-  &.card-first {
-    border-top-right-radius: 1.5px;
-    border-top-left-radius: 1.5px;
-  }
-
-  &.card-last {
-    border-bottom-left-radius: 1.5px;
-    border-bottom-right-radius: 1.5px;
-  }
-}
-
-@mixin picture($size) {
-  height: $size;
-  width: $size;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }

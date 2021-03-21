@@ -1,16 +1,27 @@
+@import "./../assets/mixins/common";
+
 .header {
   height: 120px;
   position: fixed;
   top: 0;
   width: 100%;
-  background-image: linear-gradient(to right, orangered, yellow);
+  background: white;
   font-size: 1.5rem;
   text-align: center;
+  line-height: 120px;
   z-index: 2;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  @include w600 {
+    height: 80px;
+    font-size: 1rem;
+    line-height: 80px;
+  }
 
   .sub-tit {
     font-size: 0.6em;
-    color: white;
+    color: orangered;
   }
 
   h1::first-letter {
@@ -22,14 +33,9 @@
   position: relative;
   top: 120px;
   height: 100%;
-}
-.footer {
-  width: 100%;
-  position: relative;
-  top: 120px;
-  bottom: 0px;
-  background-color: lightskyblue;
-  font-size: 1.2rem;
-  text-align: center;
-  line-height: 30px;
+  
+
+  @include w600 {
+    top: 90px;
+  }
 }
